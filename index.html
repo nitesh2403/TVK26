@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(44, 95, 45, 0.9);
+            color: white;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+        nav {
+            background: rgba(59, 122, 59, 0.9);
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #d4edda;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
+        section {
+            background: rgba(248, 255, 240, 0.9);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: scale(1.02);
+        }
+        .sidebar {
+            width: 25%;
+            max-width: 300px;
+            background: rgba(212, 237, 218, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        button {
+            background: rgba(44, 95, 45, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: rgba(59, 122, 59, 0.9);
+        }
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer {
+            background: rgba(44, 95, 45, 0.9);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Environmental Tracker</h1>
+    </header>
+    <nav>
+        <a href="./index.html">Home</a>
+        
+        <a href="reports.html">Pollution Reports</a>
+        <a href="waste.html">Waste Management</a>
+        
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <section id="air-quality">
+            <h2>Current Air Pollution Index</h2>
+            <p>Location: <span id="location">Fetching...</span></p>
+            <p>Air Quality Index (AQI): <a href="aqi-details.html" id="aqi">Loading...</a></p>
+            <label for="location-search">Search for a location:</label>
+            <input type="text" id="location-search" list="locations" placeholder="Type or select a location">
+            <datalist id="locations">
+                <option value="New York"></option>
+                <option value="London"></option>
+                <option value="Tokyo"></option>
+                <option value="Paris"></option>
+                <option value="Delhi"></option>
+            </datalist>
+        </section>
+        <section id="water-quality">
+            <h2>Current Water Pollution Index</h2>
+            <p>Location: <span id="water-location">Fetching...</span></p>
+            <p>Water Pollution Index (WPI): <a href="wpi-details.html" id="wpi">Loading...</a></p>
+            <label for="water-location-search">Search for a location:</label>
+            <input type="text" id="water-location-search" list="water-locations" placeholder="Type or select a location">
+            <datalist id="water-locations">
+                <option value="Amazon River"></option>
+                <option value="Ganges River"></option>
+                <option value="Yangtze River"></option>
+                <option value="Mississippi River"></option>
+                <option value="Nile River"></option>
+            </datalist>
+        </section>
+        <section id="nearby-industries">
+            <h2>Nearby Industrial Buildings & Pollution Levels</h2>
+            <ul id="industries-list">
+                <li>Factory A - AQI: 85 (Moderate)</li>
+                <li>Factory B - AQI: 120 (Unhealthy for Sensitive Groups)</li>
+                <li>Factory C - AQI: 160 (Unhealthy)</li>
+            </ul>
+        </section>
+        <section id="waste-management">
+            <h2>Waste Management & Recycling</h2>
+            <p>Report Illegal Dumping:</p>
+            <button onclick="window.location.href='report-form.html'">Report</button>
+            <p>Nearby Recycling Centers:</p>
+            <ul id="recycling-centers">
+                <li>Green Recycle Hub - 2.5 km away</li>
+                <li>Eco-Friendly Waste Center - 4 km away</li>
+                <li>Clean Earth Recycling - 6 km away</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Environmental Tracker. All rights reserved.</p>
+    </footer>
+</body>
+</html>

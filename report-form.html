@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complaint Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: url("./istockphoto-696067730-612x612.jpg") no-repeat center
+          center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 20px;
+      }
+      input,
+      textarea,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: 0.3s;
+        box-sizing: border-box;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: #4a90e2;
+        outline: none;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+      }
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      button {
+        background: #4a90e2;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        margin-top: 15px;
+      }
+      button:hover {
+        background: #357abd;
+      }
+      nav {
+            background: rgba(59, 122, 59, 0.9);
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #d4edda;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <nav>
+            <a href="./index.html">Home</a>
+            
+            <a href="reports.html">Pollution Reports</a>
+            <a href="waste.html">Waste Management</a>
+            
+            <a href="contact.html">Contact</a>
+        </nav>
+      <h2>Submit a Complaint</h2>
+      <form
+        action="mailto:your-email@example.com"
+        method="POST"
+        enctype="text/plain"
+      >
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="contact" placeholder="Your Contact" required />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Your Phone Number"
+          required
+        />
+        <textarea
+          name="complaint"
+          placeholder="Describe your complaint"
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit">Submit Complaint</button>
+      </form>
+    </div>
+  </body>
+</html>

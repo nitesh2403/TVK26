@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pollution Reports</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("background.jpg") no-repeat center center fixed;
+        background-size: cover;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      header {
+        background: rgba(44, 95, 45, 0.9);
+        color: white;
+        padding: 1rem;
+        font-size: 1.5rem;
+      }
+      nav {
+        background: rgba(59, 122, 59, 0.9);
+        padding: 10px;
+      }
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+      nav a:hover {
+        color: #d4edda;
+      }
+      main {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      section {
+        background: rgba(248, 255, 240, 0.9);
+        padding: 20px;
+        width: 45%;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      section:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      }
+      .report-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+      input,
+      textarea,
+      select {
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        background: rgba(44, 95, 45, 0.9);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: rgba(59, 122, 59, 0.9);
+      }
+      .reports-list,
+      .incidents-list,
+      .news-list {
+        text-align: left;
+        padding: 20px;
+      }
+      nav {
+            background: rgba(59, 122, 59, 0.9);
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #d4edda;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Pollution Reports</h1>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      
+      <a href="waste.html">Waste Management</a>
+      
+      <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+      <div class="container">
+        <section>
+          <h2>Submit a Pollution Report</h2>
+          <form class="report-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="text" placeholder="Location" required />
+            <select required>
+              <option value="">Select Pollution Type</option>
+              <option value="air">Air Pollution</option>
+              <option value="water">Water Pollution</option>
+              <option value="waste">Waste Dumping</option>
+            </select>
+            <textarea
+              placeholder="Describe the pollution issue"
+              required
+            ></textarea>
+            <button type="submit">Submit Report</button>
+          </form>
+        </section>
+        <section>
+          <h2>Recent Reports</h2>
+          <div class="reports-list">
+            <p>
+              <strong>New York:</strong> High AQI levels due to industrial
+              emissions.
+            </p>
+            <p>
+              <strong>Ganges River:</strong> Excessive waste dumping affecting
+              water quality.
+            </p>
+            <p><strong>Tokyo:</strong> Smog accumulation in urban areas.</p>
+            <p>
+              <strong>Paris:</strong> Uncontrolled plastic waste in public
+              areas.
+            </p>
+          </div>
+        </section>
+        <section>
+          <h2>Pollution Incidents Near You</h2>
+          <div class="incidents-list">
+            <p>
+              <strong>Local Factory Emissions:</strong> Increased pollution
+              levels reported near industrial zones.
+            </p>
+            <p>
+              <strong>Water Contamination:</strong> Unsafe water levels detected
+              in nearby lakes.
+            </p>
+            <p>
+              <strong>Illegal Waste Dumping:</strong> Unauthorized waste
+              disposal reported in outskirts.
+            </p>
+          </div>
+        </section>
+        <section>
+          <h2>Latest Pollution News</h2>
+          <div class="news-list">
+            <p>
+              <strong>Government Initiative:</strong> New policies introduced to
+              curb industrial emissions.
+            </p>
+            <p>
+              <strong>Climate Change Impact:</strong> Studies show increasing
+              urban pollution levels.
+            </p>
+            <p>
+              <strong>Recycling Programs:</strong> More cities adopting waste
+              management solutions.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2025 Environmental Tracker. All rights reserved.</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          section.addEventListener("mouseover", () => {
+            section.style.background = "rgba(235, 245, 224, 0.9)";
+          });
+          section.addEventListener("mouseleave", () => {
+            section.style.background = "rgba(248, 255, 240, 0.9)";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
